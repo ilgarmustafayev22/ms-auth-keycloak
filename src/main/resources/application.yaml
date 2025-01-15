@@ -1,0 +1,43 @@
+server:
+  port: 8081
+
+spring:
+  security:
+    oauth2:
+      resource-server:
+        jwt:
+          issuer-uri: http://localhost:8080/realms/test
+      client:
+        registration:
+          keycloak:
+            client-id: myclient
+            client-secret: eOONCF0UgWp2q86Yqq1GtpbEbbH6iulP
+            scope: openid, profile
+            authorization-grant-type: authorization_code
+        provider:
+          keycloak:
+            issuer-uri: http://localhost:8080/realms/test
+            user-name-attribute: preferred_username
+keycloak:
+  server-url: http://localhost:8080
+  realm: test
+  username: admin
+  password: admin
+  client-id: myclient
+  client-secret: eOONCF0UgWp2q86Yqq1GtpbEbbH6iulP
+#logging:
+#  level:
+#    com.msauth.msauthkeycloak: trace
+#    web: trace
+#    root: trace
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui
+
+jwt:
+  auth:
+    converter:
+      resource-id: myclient
