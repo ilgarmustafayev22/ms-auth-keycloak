@@ -16,7 +16,7 @@ import org.springframework.security.web.SecurityFilterChain;
 public class WebSecurityConfig {
 
     public static final String ADMIN = "admin";
-    public static final String GENERAL = "general";
+//    public static final String GENERAL = "general";
     private final JwtAuthConverter jwtAuthConverter;
 
     @Bean
@@ -24,8 +24,8 @@ public class WebSecurityConfig {
         return httpSecurity
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(HttpMethod.POST, "/api/v1/auth/**").permitAll()
-                        .requestMatchers(HttpMethod.GET, "/test/admin", "/test/admin/**").hasRole(ADMIN)
-                        .requestMatchers(HttpMethod.GET, "/test/user").hasAnyRole(GENERAL)
+//                        .requestMatchers(HttpMethod.GET, "/test/admin", "/test/admin/**").hasRole(ADMIN)
+//                        .requestMatchers(HttpMethod.GET, "/test/user").hasAnyRole(GENERAL)
                         .anyRequest().authenticated()
                 )
                 .oauth2ResourceServer(oauth2 -> oauth2

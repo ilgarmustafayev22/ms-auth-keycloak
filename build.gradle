@@ -9,7 +9,7 @@ version = '0.0.1-SNAPSHOT'
 
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(17)
+        languageVersion = JavaLanguageVersion.of(21)
     }
 }
 
@@ -26,6 +26,7 @@ repositories {
 dependencies {
     implementation 'org.keycloak:keycloak-admin-client:22.0.5'
 //    implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
+    implementation 'com.mashape.unirest:unirest-java:1.4.9'
     implementation 'org.jboss.resteasy:resteasy-client:6.2.11.Final'
     implementation 'org.jboss.resteasy:resteasy-jackson2-provider:6.2.11.Final'
     implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-xml'

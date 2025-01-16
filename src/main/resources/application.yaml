@@ -10,21 +10,24 @@ spring:
       client:
         registration:
           keycloak:
-            client-id: myclient
-            client-secret: eOONCF0UgWp2q86Yqq1GtpbEbbH6iulP
+            client-id: testclient
+            client-secret: pFoyqhV09KElNpckaMe1KkAwSNysP09R
             scope: openid, profile
             authorization-grant-type: authorization_code
         provider:
           keycloak:
             issuer-uri: http://localhost:8080/realms/test
             user-name-attribute: preferred_username
-keycloak:
-  server-url: http://localhost:8080
-  realm: test
-  username: admin
-  password: admin
-  client-id: myclient
-  client-secret: eOONCF0UgWp2q86Yqq1GtpbEbbH6iulP
+application:
+  keycloak:
+    server-url: http://localhost:8080
+    realm: test
+    username: john123
+    password: john123
+    client-id: testclient
+    client-secret: pFoyqhV09KElNpckaMe1KkAwSNysP09R
+    token-url: http://localhost:8080/realms/test/protocol/openid-connect/token
+
 #logging:
 #  level:
 #    com.msauth.msauthkeycloak: trace
@@ -40,4 +43,4 @@ springdoc:
 jwt:
   auth:
     converter:
-      resource-id: myclient
+      resource-id: testclient
